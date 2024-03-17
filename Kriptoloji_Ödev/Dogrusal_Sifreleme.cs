@@ -27,9 +27,9 @@ namespace Kriptoloji_Ödev
 
 			a = int.Parse(textBox3.Text);
 			b = int.Parse(textBox4.Text);
-			m = int.Parse(textBox5.Text);
+			m = 29;
 
-			if (a%m != 0)
+			if (a% 29 != 0)
 			{
 				metin = textBox1.Text.ToUpper();
 				şifreliMetin = "";
@@ -38,13 +38,13 @@ namespace Kriptoloji_Ödev
 				{
 					if (alfabe.IndexOf(metin[i]) == -1)
 					{
-						şifreliMetin += metin[i].ToString();
+						continue;
 					}
 					else
 					{
 
 						k = alfabe.IndexOf(metin[i]);
-						z = alfabe[((k * a + b) % m)].ToString();
+						z = alfabe[((k * a + b) % 29)].ToString();
 
 						şifreliMetin += z;
 					}
@@ -74,31 +74,21 @@ namespace Kriptoloji_Ödev
 			string metin, şifreliMetin;
 			string y;
 
-			a = int.Parse(textBox3.Text);
-			b = int.Parse(textBox4.Text);
-			m = int.Parse(textBox5.Text);
+			a = int.Parse(textBox8.Text);
+			b = int.Parse(textBox5.Text);
+			m = 29;
 
 			if (a % m != 0)
 			{
-				şifreliMetin = textBox2.Text.ToUpper();
+				şifreliMetin = textBox6.Text.ToUpper();
 				metin = "";
 
-				//for (int i = 0; ; i++)
-				//{
-				//	g = (a * i) % 29;
-
-				//	if (g == 1)
-				//	{
-				//		z = i;
-				//		break;
-				//	}
-				//}
 
 				for (int i = 0; i < şifreliMetin.Length; i++)
 				{
 					if (alfabe.IndexOf(şifreliMetin[i]) == -1)
 					{
-						metin += şifreliMetin[i].ToString();
+						continue;
 					}
 					else
 					{
@@ -113,12 +103,11 @@ namespace Kriptoloji_Ödev
 							z += 29;
 						}
 						y = alfabe[(z/a)].ToString();
-						//y = alfabe[Math.Abs(((z * (k - b)) % m))].ToString();
 
 						metin += y;
 					}
 				}
-				textBox1.Text = metin;
+				textBox7.Text = metin;
 			}
 			else
 			{

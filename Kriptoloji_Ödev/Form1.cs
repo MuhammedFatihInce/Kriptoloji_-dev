@@ -38,5 +38,19 @@ namespace Kriptoloji_Ödev
 			d_g.Show();
 			this.Hide();
 		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			Yerine_Koyma y_k = new Yerine_Koyma();
+			y_k.Show();
+			this.Hide();
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			permutasyon_sifreleme_algoritması per_a = new permutasyon_sifreleme_algoritması();
+			per_a.Show();
+			this.Hide();
+		}
 	}
 }

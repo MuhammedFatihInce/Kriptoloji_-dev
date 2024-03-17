@@ -29,7 +29,9 @@ namespace Kriptoloji_Ödev
 			{
 				if (alfabe.IndexOf(kelime[i]) == -1)
 				{
-					şifreliMetin += kelime[i].ToString();
+
+					//şifreliMetin += kelime[i].ToString();
+					continue;
 				}
 				else
 				{
@@ -51,13 +53,6 @@ namespace Kriptoloji_Ödev
 			}
 
 			textBox2.Text = şifreliMetin;
-			//string kelime = "";
-			//kelime = textBox1.Text;
-			//char[] harfler = kelime.ToCharArray();
-			//foreach (char harf in harfler)
-			//{
-			//	textBox2.Text += Convert.ToChar(harf + 3).ToString();
-			//}
 
 		}
 
@@ -66,7 +61,7 @@ namespace Kriptoloji_Ödev
 		{
 			string alfabe = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
 			string şifreliMetin = "";
-			şifreliMetin = textBox2.Text.ToUpper();
+			şifreliMetin = textBox4.Text.ToUpper();
 			string kelime = "";
 			int k;
 			string z;
@@ -74,7 +69,8 @@ namespace Kriptoloji_Ödev
 			{
 				if (alfabe.IndexOf(şifreliMetin[i]) == -1)
 				{
-					kelime += şifreliMetin[i].ToString();
+					//kelime += şifreliMetin[i].ToString();
+					continue;
 				}
 				else
 				{
@@ -96,15 +92,8 @@ namespace Kriptoloji_Ödev
 				}
 			}
 
-			textBox1.Text = kelime;
+			textBox3.Text = kelime;
 
-			//string sifre = "";
-			//sifre = textBox2.Text;
-			//char[] harfler = sifre.ToCharArray();
-			//foreach (char harf in harfler)
-			//{
-			//	textBox1.Text += Convert.ToChar(harf - 3).ToString();
-			//}
 		}
 
 		private void button3_Click(object sender, EventArgs e)

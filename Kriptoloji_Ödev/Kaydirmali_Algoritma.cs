@@ -19,30 +19,81 @@ namespace Kriptoloji_Ödev
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			
 			int anahtar = 0;
-			string kelime = "";
 			anahtar = Convert.ToInt32(textBox3.Text);
-			kelime = textBox1.Text;
-			char[] harfler = kelime.ToCharArray();
-			foreach (char harf in harfler)
+			string alfabe = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+			string kelime = "";
+			kelime = textBox1.Text.ToUpper();
+			string şifreliMetin = "";
+			int k;
+			string z;
+			for (int i = 0; i < kelime.Length; i++)
 			{
-				textBox2.Text += Convert.ToChar(harf + anahtar).ToString();
+				if (alfabe.IndexOf(kelime[i]) == -1)
+				{
+					continue;
+				}
+				else
+				{
+
+					k = alfabe.IndexOf(kelime[i]);
+					if (k + anahtar > 29)
+					{
+						int a = k + anahtar;
+						int b = a - 29;
+						z = alfabe[b].ToString();
+					}
+					else
+					{
+						z = alfabe[k + anahtar].ToString();
+					}
+
+					şifreliMetin += z;
+				}
 			}
+
+			textBox2.Text = şifreliMetin;
+
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
 			int anahtar = 0;
-			string sifre = "";
-			anahtar = Convert.ToInt32(textBox3.Text);
-			sifre = textBox2.Text;
-			char[] harfler = sifre.ToCharArray();
-			foreach (char harf in harfler)
+			anahtar = Convert.ToInt32(textBox4.Text);
+			string alfabe = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+			string şifreliMetin = "";
+			şifreliMetin = textBox6.Text.ToUpper();
+			string kelime = "";
+			int k;
+			string z;
+			for (int i = 0; i < şifreliMetin.Length; i++)
 			{
-				string a = Convert.ToChar(harf - anahtar).ToString();
-				textBox1.Text += a;
+				if (alfabe.IndexOf(şifreliMetin[i]) == -1)
+				{
+					continue;
+				}
+				else
+				{
+
+					k = alfabe.IndexOf(şifreliMetin[i]);
+					if (k - anahtar < 0)
+					{
+						int a = anahtar - k;
+						int b = 29 - a;
+						z = alfabe[b].ToString();
+					}
+					else
+					{
+						z = alfabe[k - anahtar].ToString();
+					}
+
+
+					kelime += z;
+				}
 			}
+
+			textBox5.Text = kelime;
+
 		}
 
 		private void button3_Click(object sender, EventArgs e)
