@@ -52,5 +52,19 @@ namespace Kriptoloji_Ödev
 			per_a.Show();
 			this.Hide();
 		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			Rota_sifreleme_algoritmasi r_s = new Rota_sifreleme_algoritmasi();
+			r_s.Show();
+			this.Hide();
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			Yer_Degistirme y_d = new Yer_Degistirme();
+			y_d.Show();
+			this.Show();
+		}
 	}
 }
