@@ -20,10 +20,10 @@ namespace Kriptoloji_Ödev
 		private void button1_Click_1(object sender, EventArgs e)
 		{
             string metin = textBox1.Text;
-
+            string metinEdit = metin.Replace(" ", "");
 
             double anahtar = Convert.ToDouble(textBox4.Text);
-            double gercek_deger = metin.Length / anahtar;
+            double gercek_deger = metinEdit.Length / anahtar;
             decimal satir_sayisi = Math.Ceiling(Convert.ToDecimal(gercek_deger));
 
 
@@ -34,9 +34,9 @@ namespace Kriptoloji_Ödev
             {
                 for (int j = 0; j < anahtar; j++)
                 {
-                    if (index < metin.Length)
+                    if (index < metinEdit.Length)
                     {
-                        matrix[i, j] = metin[index];
+                        matrix[i, j] = metinEdit[index];
                         index++;
                     }
                     else

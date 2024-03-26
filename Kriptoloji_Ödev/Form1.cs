@@ -66,5 +66,14 @@ namespace Kriptoloji_Ödev
 			y_d.Show();
 			this.Show();
 		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+			Zigzag_algoritmasi z_g = new Zigzag_algoritmasi();
+			z_g.Show();
+			this.Show();
+		}
+
+	
 	}
 }
